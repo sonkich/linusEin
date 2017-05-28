@@ -7,3 +7,9 @@ Route::set('', function() {
 Route::set('home', function() {
     Home::constructView();
 });
+
+Route::set('404', function() {
+    View::createView('404',[]);
+});
+
+Route::invokeMethod();
