@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php echo View::getViewByName('header'); ?>
-    <?php echo View::getViewByName($data['viewContentName']); ?>
+    <?php echo View::getViewByName($data['viewContentName'],$data); ?>
     <?php echo View::getViewByName('footer'); ?>
 </body>
 </html>

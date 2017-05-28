@@ -2,13 +2,15 @@
 
 class Route {
 
-    public static $validRoutes = array();
+    private static $validRoutes = array();
 
     public static function set($route, $function) {
 
         self::$validRoutes[] = $route;
 
-        if($_GET['url'] == $route) {
+        $url = isset($_GET['url'])? $_GET['url']: '';
+
+        if($url == $route) {
             $function->__invoke();
         }
     }

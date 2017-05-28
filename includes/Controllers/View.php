@@ -9,7 +9,7 @@ class View {
         require_once( TEMPLATE_DIR . "master.phtml");
     }
 
-    public static function getViewByName($viewName) {
-        echo file_get_contents(TEMPLATE_DIR . $viewName . '.phtml');
+    public static function getViewByName($viewName,$data = []) {
+         include(TEMPLATE_DIR . $viewName . '.phtml');
     }
 }
