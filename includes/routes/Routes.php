@@ -1,9 +1,9 @@
 <?php
 
 Route::set('index.php', function() {
-    View::createView('home');
+    View::createView('home',[]);
 });
 
 Route::set('about-us', function() {
-    View::createView('about-us');
+    View::createView('about-us',[]);
 });
