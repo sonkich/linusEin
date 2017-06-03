@@ -1,8 +1,77 @@
+<?php
+
+$basePath = 'http://localhost/linus-ein/';
+$menuItems = [
+    [
+        'name' => 'Начало',
+        'url' => 'home',
+        'childs' => []
+    ],
+    [
+        'name' => 'Услуги',
+        'url' => 'services',
+        'childs' => [
+            [
+                'name' => 'Почивстване на офиси',
+                'url' => 'services/office',
+            ],
+            [
+                'name' => 'Почиствае на домове',
+                'url' => 'services/home',
+            ],
+            [
+                'name' => 'Пране на килими',
+                'url' => 'services/wash',
+            ],
+            [
+                'name' => 'Почистване след ремонт',
+                'url' => 'services/renovation-clean',
+            ]
+        ]
+    ],
+    [
+        'name' => 'Цени',
+        'url' => 'prices',
+        'childs' => []
+    ],
+    [
+        'name' => 'Контакти',
+        'url' => 'contacts',
+        'childs' => []
+    ],
+    [
+        'name' => 'Партньори',
+        'url' => 'partners',
+        'childs' => []
+    ],
+];
+?>
+
+
 <header>
     <h1>LinusEin</h1>
     <nav>
         <ul>
-            <li><a href="/home"></a></li>
+            <?php foreach ($menuItems as $menuItem): ?>
+                <li>
+                    <span>
+                        <?php if (empty($menuItem['childs'])): ?>
+                            <a href="<?= $basePath . $menuItem['url']; ?>"><?= $menuItem['name']; ?></a>
+                        <?php else: ?>
+                            <?= $menuItem['name']; ?>
+                        <?php endif; ?>
+                    </span>
+                    <?php if (!empty($menuItem['childs'])): ?>
+                        <ul>
+                            <?php foreach ($menuItem['childs'] as $secondMenuItem): ?>
+                                <li>
+                                    <a href="<?= $basePath . $secondMenuItem['url']; ?>"><?= $secondMenuItem['name']; ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </nav>
 </header>

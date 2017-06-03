@@ -1,14 +1,16 @@
+<?php $basePath = 'http://localhost/linus-ein/'; ?>
 <!doctype html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="public\dist\css\app.min.css">
-    <script src="public\dist\js\libs-min.js"></script>
-    <script src="public\dist\js\app.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?= $basePath; ?>public/dist/css/app.min.css">
+    <script type="text/js" src="<?= $basePath; ?>public/dist/js/libs-min.js"></script>
+    <script type="text/js" src="<?= $basePath; ?>public/dist/js/app.js"></script>
 </head>
 <body>
     <?php echo View::getViewByName('header'); ?>
