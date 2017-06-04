@@ -5,6 +5,7 @@ $header-second-menu-height: 40px;
     height: $header-height;
 }
 header {
+    z-index: 1;
     position: fixed;
     top: 0;
     display: flex;
@@ -48,9 +49,9 @@ header {
                         position: absolute;
                             top: $header-height;
                         perspective: 1000px;
-                        padding-top: 2px;
 
                         .second-level-navigation-item {
+                            z-index: 0;
                             transform-origin: top center;
                             opacity: 0;
                             display: none;
