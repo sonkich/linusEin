@@ -56,11 +56,11 @@ header {
                             opacity: 0;
                             display: none;
                             height: $header-second-menu-height;
-                            background-color: rgba($main-color,0.5);
+                            background-color: #a9eb82;
                             border-top: 1px solid rgba(#FFFFFF,0.2);
                             border-bottom: 1px solid rgba(#000000,0.2);
 
-                            &:hover { background-color: rgba($main-color,0.35); }
+                            &:hover { background-color: #c7eba4; }
 
                             a {
                                 display: inline-block;
