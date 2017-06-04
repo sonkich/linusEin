@@ -25,15 +25,15 @@ Route::set('services/renovation-clean', function() {
 });
 
 Route::set('prices', function() {
-    Home::constructView();
+    Prices::constructView();
 });
 
 Route::set('contacts', function() {
-    Home::constructView();
+    Contacts::constructView();
 });
 
 Route::set('partners', function() {
-    Home::constructView();
+    Partners::constructView();
 });
 
 Route::set('404', function() {

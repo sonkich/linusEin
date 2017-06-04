@@ -1,6 +1,6 @@
 <?php
 
-$basePath = 'http://localhost/linus-ein/';
+$basePath = Helper::getBasePath();
 $menuItems = [
     [
         'name' => 'Начало',
@@ -47,31 +47,33 @@ $menuItems = [
 ];
 ?>
 
-
+<div class="header-height-push"></div>
 <header>
-    <h1>LinusEin</h1>
-    <nav>
-        <ul>
-            <?php foreach ($menuItems as $menuItem): ?>
-                <li>
-                    <span>
-                        <?php if (empty($menuItem['childs'])): ?>
-                            <a href="<?= $basePath . $menuItem['url']; ?>"><?= $menuItem['name']; ?></a>
-                        <?php else: ?>
-                            <?= $menuItem['name']; ?>
+    <div class="header-content-wrapper">
+        <h1 class="logo">LinusEin</h1>
+        <nav>
+            <ul class="first-level-navigation">
+                <?php foreach ($menuItems as $menuItem): ?>
+                    <li class="first-level-navigation-item <?= $data['viewContentName'] == $menuItem['name']? 'active':'';?>">
+                        <span class="first-level-navigation-title">
+                            <?php if (empty($menuItem['childs'])): ?>
+                                <a href="<?= $basePath . $menuItem['url']; ?>"><?= $menuItem['name']; ?></a>
+                            <?php else: ?>
+                                <?= $menuItem['name']; ?>
+                            <?php endif; ?>
+                        </span>
+                        <?php if (!empty($menuItem['childs'])): ?>
+                            <ul class="second-level-navigation">
+                                <?php foreach ($menuItem['childs'] as $secondMenuItemIndex => $secondMenuItem): ?>
+                                    <li class="second-level-navigation-item second-level-navigation-item-<?= $secondMenuItemIndex + 1 ; ?>">
+                                        <a href="<?= $basePath . $secondMenuItem['url']; ?>"><?= $secondMenuItem['name']; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         <?php endif; ?>
-                    </span>
-                    <?php if (!empty($menuItem['childs'])): ?>
-                        <ul>
-                            <?php foreach ($menuItem['childs'] as $secondMenuItem): ?>
-                                <li>
-                                    <a href="<?= $basePath . $secondMenuItem['url']; ?>"><?= $secondMenuItem['name']; ?></a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </nav>
+    </div>
 </header>
