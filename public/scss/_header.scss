@@ -19,7 +19,7 @@ header {
             justify-content: space-between;
             align-items: center;
         width: 100%;
-        max-width: 1024px;
+        max-width: $max-width;
         height: $header-height;
 
         .logo {
